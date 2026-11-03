@@ -50,3 +50,6 @@ textarea{width:100%;background:#0e0e20;color:var(--ink);border:1px solid #2c2c4d
 .empty{color:var(--mut);text-align:center}
 footer{text-align:center;color:var(--mut);font-size:.9rem}
 footer a{color:var(--turq)}
+
+.cachebar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px;color:var(--mut)}
+.cachebar span{font-size:.92rem}
