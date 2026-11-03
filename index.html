@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>insta-followers — ¿Quién no te sigue de vuelta?</title>
+<meta name="description" content="Descubre a quién sigues y no te sigue, y quién te sigue sin que lo sigas. 100% privado: todo se calcula en tu dispositivo.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔍</text></svg>">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+<header class="top">
+  <div class="logo">🔍 <span>insta-followers</span></div>
+  <select id="lang" aria-label="Language">
+    <option value="es">Español</option>
+    <option value="en">English</option>
+    <option value="fr">Français</option>
+    <option value="de">Deutsch</option>
+    <option value="zh">中文</option>
+    <option value="pt">Português</option>
+  </select>
+</header>
+
+<main>
+  <section class="hero">
+    <h1 data-i18n="h1">¿Quién no te sigue de vuelta?</h1>
+    <p class="sub" data-i18n="sub">Compara tus seguidores y seguidos de Instagram y descubre las dos diferencias: a quién sigues sin que te siga, y quién te sigue sin que lo sigas.</p>
+    <p class="privacy">🔒 <span data-i18n="priv">100% privado: tus archivos se procesan en tu dispositivo. Nada se sube a ningún servidor.</span></p>
+  </section>
+
+  <section class="steps panel">
+    <h2 data-i18n="how">Cómo funciona</h2>
+    <ol>
+      <li data-i18n="s1">En Instagram ve a Configuración → Centro de cuentas → Tu información y permisos → Descargar tu información.</li>
+      <li data-i18n="s2">Pide la descarga eligiendo «Seguidores y seguidos» en formato JSON. Instagram te avisará cuando esté lista (minutos u horas).</li>
+      <li data-i18n="s3">Descarga el archivo .zip y súbelo aquí. También acepto los archivos followers_1.json y following.json sueltos.</li>
+    </ol>
+    <p class="why" data-i18n="why">¿Por qué así? La API oficial de Instagram no entrega a ninguna app la lista de seguidores/seguidos con login; los sitios que piden tu usuario y contraseña de Instagram son inseguros y pueden costarte la cuenta. La exportación oficial es la vía segura.</p>
+  </section>
+
+  <section class="panel">
+    <div id="drop" class="drop">
+      <p class="drop-big">📦 <span data-i18n="drop">Suelta aquí tu .zip (o los .json)</span></p>
+      <p data-i18n="orclick">o haz clic para elegir los archivos</p>
+      <input type="file" id="files" accept=".zip,.json" multiple hidden>
+    </div>
+    <p id="fileinfo" class="fileinfo"></p>
+    <details class="paste">
+      <summary data-i18n="pasteT">¿Prefieres pegar las listas a mano?</summary>
+      <div class="paste-grid">
+        <label><span data-i18n="pFollowers">Seguidores (uno por línea)</span>
+          <textarea id="pasteFollowers" rows="6" placeholder="@usuario"></textarea></label>
+        <label><span data-i18n="pFollowing">Seguidos (uno por línea)</span>
+          <textarea id="pasteFollowing" rows="6" placeholder="@usuario"></textarea></label>
+      </div>
+      <button class="btn" id="pasteGo" data-i18n="compare">Comparar</button>
+    </details>
+    <p id="error" class="error"></p>
+  </section>
+
+  <section id="results" class="panel" hidden>
+    <div class="counts">
+      <div class="count"><b id="cFollowing">0</b><span data-i18n="tFollowing">Siguiendo</span></div>
+      <div class="count"><b id="cFollowers">0</b><span data-i18n="tFollowers">Seguidores</span></div>
+      <div class="count hot"><b id="cNoBack">0</b><span data-i18n="tNoBack">No te siguen de vuelta</span></div>
+      <div class="count hot2"><b id="cNoFollow">0</b><span data-i18n="tNoFollow">No sigues de vuelta</span></div>
+    </div>
+    <div class="tabs" role="tablist">
+      <button class="tab active" data-tab="following" data-i18n="tFollowing">Siguiendo</button>
+      <button class="tab" data-tab="followers" data-i18n="tFollowers">Seguidores</button>
+      <button class="tab" data-tab="noback" data-i18n="tNoBack">No te siguen de vuelta</button>
+      <button class="tab" data-tab="nofollow" data-i18n="tNoFollow">No sigues de vuelta</button>
+    </div>
+    <div class="tools">
+      <input type="search" id="q" placeholder="Buscar usuario…">
+      <button class="btn small" id="copyBtn" data-i18n="copy">Copiar lista</button>
+      <button class="btn small" id="dlBtn" data-i18n="download">Descargar .txt</button>
+    </div>
+    <ul id="list" class="list"></ul>
+    <p id="empty" class="empty" hidden data-i18n="empty">Nada por aquí 🎉</p>
+  </section>
+
+  <footer>
+    <p data-i18n="foot">Hecho con 💜 por Tec Girl · Esta herramienta no está afiliada a Instagram ni a Meta.</p>
+    <p><a href="https://tec-girl.github.io/" target="_blank" rel="noopener">tec-girl.github.io</a></p>
+  </footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
