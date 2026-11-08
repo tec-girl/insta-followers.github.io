@@ -56,3 +56,5 @@ footer a{color:var(--turq)}
 
 .warn{color:#f2c14e;text-align:center;line-height:1.55;margin:6px 0}
 .note{color:var(--mut);text-align:center;line-height:1.55;margin:6px 0;font-size:.92rem}
+
+a.btn{display:inline-block;text-decoration:none}
