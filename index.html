@@ -33,17 +33,17 @@
     <h2 data-i18n="how">Cómo funciona</h2>
     <ol>
       <li data-i18n="s1">En Instagram ve a Configuración → Centro de cuentas → Tu información y permisos → Descargar tu información.</li>
-      <li data-i18n="s2">Pide la descarga eligiendo «Seguidores y seguidos» en formato JSON. Instagram te avisará cuando esté lista (minutos u horas).</li>
-      <li data-i18n="s3">Descarga el archivo .zip y súbelo aquí. También acepto los archivos followers_1.json y following.json sueltos.</li>
+      <li data-i18n="s2">Pide la descarga eligiendo «Seguidores y seguidos» en formato JSON o HTML. Instagram te avisará cuando esté lista (minutos u horas).</li>
+      <li data-i18n="s3">Descarga el archivo .zip y súbelo aquí. También acepto los archivos followers_1 y following sueltos, en .json o .html.</li>
     </ol>
     <p class="why" data-i18n="why">¿Por qué así? La API oficial de Instagram no entrega a ninguna app la lista de seguidores/seguidos con login; los sitios que piden tu usuario y contraseña de Instagram son inseguros y pueden costarte la cuenta. La exportación oficial es la vía segura.</p>
   </section>
 
   <section class="panel">
     <div id="drop" class="drop">
-      <p class="drop-big">📦 <span data-i18n="drop">Suelta aquí tu .zip (o los .json)</span></p>
+      <p class="drop-big">📦 <span data-i18n="drop">Suelta aquí tu .zip (o los .json/.html)</span></p>
       <p data-i18n="orclick">o haz clic para elegir los archivos</p>
-      <input type="file" id="files" accept=".zip,.json" multiple hidden>
+      <input type="file" id="files" accept=".zip,.json,.html" multiple hidden>
     </div>
     <p id="fileinfo" class="fileinfo"></p>
     <details class="paste">
