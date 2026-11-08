@@ -53,3 +53,6 @@ footer a{color:var(--turq)}
 
 .cachebar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px;color:var(--mut)}
 .cachebar span{font-size:.92rem}
+
+.warn{color:#f2c14e;text-align:center;line-height:1.55;margin:6px 0}
+.note{color:var(--mut);text-align:center;line-height:1.55;margin:6px 0;font-size:.92rem}
