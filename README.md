@@ -20,3 +20,7 @@ La API oficial de Instagram no entrega estas listas con login; los sitios que pi
 contraseña de Instagram son inseguros. La exportación oficial es la vía segura.
 
 Hecho con 💜 por **Tec Girl** — sin afiliación con Instagram ni Meta.
+
+## Contribuidores
+
+Contribución preparada en colaboración por **psehgaft**, **san985tos**, **frankjunker87-arch** y **tec-girl**.
